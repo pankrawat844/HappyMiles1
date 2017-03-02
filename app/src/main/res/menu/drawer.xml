@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+
+
+        <item
+            android:id="@+id/dashboard"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Dashboard" >
+
+
+        </item>
+
+        <item
+            android:id="@+id/mytour"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+
+            android:title="My Tour" />
+
+
+
+        <item
+            android:id="@+id/tour_tracker"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Tour Tracker" />
+
+
+        <item
+            android:id="@+id/billnpayment"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Billing and Payment" />
+        <item
+            android:id="@+id/communication"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Communication box" />
+        <item
+            android:id="@+id/contact_us"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Contact us" />
+        <item
+            android:id="@+id/logout"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Log Out"></item>
+
+    </group>
+
+</menu>

@@ -1,0 +1,78 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+    <style name="NavigationTheme" parent="AppTheme">
+        <item name="android:textSize">18dp</item>
+        <item name="android:layout_marginBottom">02dp</item>
+    </style>
+
+    <style name="FacebookLoginButton">
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:bottomLeftRadius">15dp</item>
+        <item name="android:bottomRightRadius">15dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="TabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/tab_text</item>
+    </style>
+
+
+    <style name="CustomTextStyle" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">12.5dp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="MyBottomSheetStyle" parent="@style/BottomSheet">
+        <item name="bottom_sheet_bg_color">@android:color/holo_blue_light</item>
+        <item name="bottom_sheet_title_text_appearance">@style/TitleAppearance</item>
+        <item name="bottom_sheet_list_text_appearance">@style/ListAppearance</item>
+        <item name="bottom_sheet_grid_text_appearance">@style/GridAppearance</item>
+    </style>
+    <style name="TitleAppearance" parent="BottomSheet.Title.TextAppearance">
+        <item name="android:textColor">@android:color/holo_green_light</item>
+    </style>
+
+    <style name="ListAppearance" parent="BottomSheet.ListItem.TextAppearance">
+        <item name="android:textColor">@android:color/holo_red_light</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="GridAppearance" parent="BottomSheet.GridItem.TextAppearance">
+        <item name="android:textColor">@android:color/holo_red_light</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="CustomDialog1" parent="Theme.AppCompat.Light.Dialog">
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:layout_marginLeft">5dp</item>
+    <item name="android:layout_marginRight">5dp</item>
+    </style>
+</resources>

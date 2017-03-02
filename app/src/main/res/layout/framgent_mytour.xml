@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
+    android:id="@+id/rel"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@color/appthemecolor">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_person_black_24dp"
+        android:id="@+id/profile_img"
+        android:padding="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+         />
+</RelativeLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/rel"
+        android:background="@drawable/custom_edittext"
+        android:hint="Name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/name" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/name"
+        android:background="@drawable/custom_edittext"
+        android:hint=" Email"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/email" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/email"
+        android:background="@drawable/custom_edittext"
+        android:hint=" Phone no"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/phno" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/phno"
+        android:background="@drawable/custom_edittext"
+        android:hint=" Meals"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/meals" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/meals"
+        android:background="@drawable/custom_edittext"
+        android:hint=" Destinagtion"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/destination" />
+
+</RelativeLayout>

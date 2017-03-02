@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:hint=" Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:id="@+id/txt2"
+        android:layout_below="@+id/txt1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <com.rey.material.widget.Spinner
+        style="@style/Material.Widget.Spinner"
+        android:id="@+id/spinr"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/txt2"
+        android:layout_marginLeft="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sex"
+            android:layout_below="@+id/spinr"/>
+    </com.rey.material.widget.Spinner>
+
+
+    <com.rey.material.widget.Spinner
+        android:id="@+id/spinr1"
+        style="@style/Material.Widget.Spinner"
+        android:layout_below="@+id/spinr"
+        android:layout_marginLeft="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Month"
+            />
+    </com.rey.material.widget.Spinner>
+    <com.rey.material.widget.Spinner
+        style="@style/Material.Widget.Spinner"
+        app:rd_style="@style/Material.Drawable.Ripple.Wave"
+        android:layout_toRightOf="@+id/spinr1"
+        android:id="@+id/spinr2"
+        android:layout_below="@+id/spinr"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day"
+            />
+    </com.rey.material.widget.Spinner>
+    <com.rey.material.widget.Spinner
+        style="@style/Material.Widget.Spinner"
+
+        android:layout_toRightOf="@+id/spinr2"
+        android:id="@+id/spinr3"
+        android:layout_below="@+id/spinr"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year"
+            />
+    </com.rey.material.widget.Spinner>
+    <EditText
+        android:id="@+id/num"
+        android:layout_below="@+id/spinr1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Number"
+        android:inputType="number"
+        />
+    <EditText
+        android:id="@+id/nation"
+        android:layout_below="@+id/num"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nationality"
+        />
+    <Button
+        android:id="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/nation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"/>
+
+</RelativeLayout>

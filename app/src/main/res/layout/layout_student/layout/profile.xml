@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/profile_bg">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="80dp"
+        android:src="@drawable/user"
+        app:civ_border_color="@android:color/white"
+        app:civ_border_width="1dp"
+        android:id="@+id/profile"/>
+    <TextView
+        android:id="@+id/text"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Mark"
+        android:layout_toRightOf="@+id/profile"
+        android:textSize="20dp"/>
+    <TableLayout
+        android:layout_below="@id/profile"
+        android:id="@+id/table"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        >
+
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/row1"
+            android:weightSum="10"
+
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/my_profile"
+                android:id="@+id/img"
+
+                android:padding="15dp"
+                android:background="@drawable/shape"
+                android:layout_weight="3"/>
+
+            <custom_font.MyTextView
+                 android:textColor="@android:color/white"
+                android:id="@+id/text1"
+                android:background="@drawable/shape"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:text="My profile"
+                android:textSize="20dp"
+               android:padding="15dp"
+                android:layout_weight="7"
+                />
+
+        </TableRow>
+
+<TableRow
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/row2"
+    android:weightSum="10">
+    <ImageView
+         android:id="@+id/guardian"
+        android:padding="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/guardian"
+        android:background="@drawable/shape"
+        android:layout_weight="3"/>
+
+    <TextView
+        android:id="@+id/text2"
+        android:textColor="@android:color/white"
+        android:background="@drawable/shape"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:text="Guardian Name"
+        android:textSize="20dp"
+        android:layout_weight="7"
+        android:padding="15dp"
+
+        />
+</TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/row3"
+            android:weightSum="10">
+            <ImageView
+                android:id="@+id/food"
+                android:padding="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/food"
+                android:background="@drawable/shape"
+                android:layout_weight="3"/>
+    <TextView
+        android:id="@+id/text3"
+        android:background="@drawable/shape"
+        android:textColor="@android:color/white"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:text="Meal prefrence"
+        android:layout_weight="7"
+        android:textSize="20dp"
+        />
+        </TableRow>
+        <TableRow
+            android:id="@+id/row4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="10">
+            <ImageView
+                android:id="@+id/heart"
+                android:padding="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/heart"
+                android:background="@drawable/shape"
+                android:layout_weight="3"/>
+            <TextView
+                android:id="@+id/text4"
+                android:background="@drawable/shape"
+                android:textColor="@android:color/white"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:text="Medication requirements"
+                android:layout_weight="7"
+                android:padding="15dp"
+                android:textSize="20dp"
+                />
+        </TableRow>
+        <TableRow
+            android:id="@+id/row5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="10"></TableRow>
+        <TableRow
+            android:id="@+id/row6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="10">
+            <ImageView
+                android:id="@+id/clg"
+                 android:padding="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/rollno"
+                android:background="@drawable/shape"
+                android:layout_weight="3"/>
+            <TextView
+                android:id="@+id/text6"
+                android:background="@drawable/shape"
+                android:textColor="@android:color/white"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:text="College Roll Number"
+                android:layout_weight="7"
+                android:textSize="20dp"
+                />
+        </TableRow>
+        <TableRow
+            android:id="@+id/row7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="10"></TableRow>
+
+
+
+
+    </TableLayout>
+
+</RelativeLayout>
+</ScrollView>

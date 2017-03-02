@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/app_bg"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.paz.happymiles.MainActivity">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/logo"
+        android:layout_centerHorizontal="true"
+       android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:id="@+id/logo" />
+
+
+
+        <RelativeLayout
+            android:id="@+id/login_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_centerInParent="true">
+
+
+            <LinearLayout
+                android:id="@+id/lin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerInParent="true">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:alpha="0.7"
+
+    >
+                <custom_font.MyEditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#ffffff"
+                    android:hint="Email"
+                    android:layout_gravity="center"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/custom_edittext"
+                    android:textSize="@dimen/edit_text"
+                    android:letterSpacing="0.1"/>
+
+</RelativeLayout>
+
+                <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+
+                >
+                <custom_font.MyEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#ffffff"
+                    android:hint="Password"
+                    android:textColor="@android:color/white"
+
+                    android:inputType="text"
+                    android:layout_marginTop="25dp"
+                    android:textSize="@dimen/edit_text"
+                    android:background="@drawable/custom_edittext"
+                    android:paddingLeft="15dp"
+                    android:letterSpacing="0.1"/>
+              </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/nex"
+        android:background="@drawable/btn_shape"
+        android:textSize="@dimen/edit_text"
+
+        android:text="Login"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/login_layout"
+
+        />
+
+
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_below="@+id/next"
+            app:fb_radius="25dp"
+            app:fb_textColor="#ffffff"
+            app:fb_defaultColor="#39579B"
+            app:fb_text="Connect with Facebook"
+            app:fb_focusColor="#6183d2"
+            app:fb_fontIconResource="&#xf230;"
+            app:fb_textSize="@dimen/edit_text"
+            app:fb_iconPosition="left"
+            app:fb_fontIconSize="20sp"
+            app:fb_iconPaddingRight="10dp"
+            android:paddingTop="12dp"
+
+            android:paddingBottom="12dp"/>
+    <custom_font.MyTextView
+        android:id="@+id/forget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forget Password"
+        android:layout_marginLeft="35dp"
+        android:textSize="15dp"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/login_button"
+        android:layout_marginTop="10dp"/>
+    <custom_font.MyTextView
+        android:id="@+id/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Signup"
+        android:layout_marginRight="25dp"
+        android:textSize="15dp"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/login_button"
+        android:layout_alignRight="@+id/login_button"
+        android:layout_marginTop="10dp"/>
+</RelativeLayout>

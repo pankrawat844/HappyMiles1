@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="appthemecolor">#0db1f0</color>
+    <color name="lightgrey">#b4a7a7</color>
+    <color name="text">#545454</color>
+    <color name="pink">#EA2164 </color>
+    <color name="bgBackSideColor">#f4f0ff</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#fff000</color>
+    <color name="press_color">#ada</color>
+    <color name="div">#d5c5a4</color>
+    <color name="textred">#ca362c</color>
+
+</resources>
