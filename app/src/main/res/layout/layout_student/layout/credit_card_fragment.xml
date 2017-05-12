@@ -172,6 +172,7 @@
 
 
         <custom_font.MyTextView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -182,6 +183,7 @@
             android:textSize="@dimen/sub_text" />
 
         <custom_font.MyEditText
+            android:id="@+id/card_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -232,6 +234,7 @@
             android:textSize="@dimen/sub_text" />
 
         <custom_font.MyEditText
+            android:id="@+id/card_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -277,6 +280,7 @@
                 android:textSize="@dimen/sub_text" />
 
             <custom_font.MyEditText
+                android:id="@+id/exp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -316,6 +320,7 @@
                 android:textSize="@dimen/sub_text" />
 
             <custom_font.MyEditText
+                android:id="@+id/cvv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -344,12 +349,13 @@
         android:layout_marginTop="41dp"
         android:background="@drawable/btn_shape"
         android:gravity="center"
-
+        android:id="@+id/submit"
         android:orientation="horizontal"
         android:padding="14dp">
 
 
         <custom_font.MyTextView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

@@ -7,4 +7,7 @@
     <dimen name="tab_text">8dp</dimen>
     <dimen name="text">15dp</dimen>
     <dimen name="sub_text">10dp</dimen>
+    <dimen name="image_height">200dp</dimen>
+    <dimen name="insets">1dp</dimen>
+    <dimen name="fab_size">55dp</dimen>
 </resources>

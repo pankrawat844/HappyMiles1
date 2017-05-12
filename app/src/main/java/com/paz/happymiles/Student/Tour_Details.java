@@ -1,9 +1,11 @@
 package com.paz.happymiles.Student;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,6 +21,8 @@ import com.paz.happymiles.Student_Pojo.Tour_Details_Pojo;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import custom_font.MyTextView;
 
 /**
  * Created by Admin on 2/27/2017.
@@ -37,13 +41,28 @@ public class Tour_Details extends Fragment {
         recyclerView.addOnItemTouchListener(new Tour_Details_Adapter(getActivity(), new Tour_Details_Adapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Dialog dialog = new Dialog(getActivity());
-                dialog.setContentView(R.layout.hotel_dialog);
-                TextView transport= (TextView)view.findViewById(R.id.transport);
-                TextView hotel=(TextView)dialog.findViewById(R.id.heading);
-                hotel.setText(transport.getText().toString());
-
-                dialog.show();
+//                Dialog dialog = new Dialog(getActivity());
+//                dialog.setContentView(R.layout.hotel_dialog);
+                MyTextView transport= (MyTextView)view.findViewById(R.id.transport);
+//                MyTextView hotel=(MyTextView)dialog.findViewById(R.id.heading);
+//                hotel.setText(transport.getText().toString());
+                if(position==0) {
+                    Intent in = new Intent(getActivity(), Hotel_Detail.class);
+                    startActivity(in);
+                }
+                else if(position==1) {
+                    Intent in = new Intent(getActivity(), Train_Detail.class);
+                    startActivity(in);
+                }
+                else if(position==2) {
+                    Intent in = new Intent(getActivity(), Flight_Details.class);
+                    startActivity(in);
+                }
+                else if(position==3) {
+                    Intent in = new Intent(getActivity(), Bus_Details.class);
+                    startActivity(in);
+                }
+               // dialog.show();
             }
         }));
         return view;

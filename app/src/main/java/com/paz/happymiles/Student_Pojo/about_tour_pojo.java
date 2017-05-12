@@ -2,11 +2,13 @@ package com.paz.happymiles.Student_Pojo;
 
 import android.view.View;
 
+import java.io.Serializable;
+
 /**
  * Created by Admin on 2/27/2017.
  */
 
-public class About_tour_pojo {
+public class About_tour_pojo implements Serializable{
     String day,day_details;
     int tour_img;
     private View.OnClickListener requestBtnClickListener;

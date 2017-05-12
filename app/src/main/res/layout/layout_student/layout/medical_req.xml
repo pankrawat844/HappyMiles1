@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+
+        >
+
+        <FrameLayout
+            android:layout_width="299dp"
+            android:layout_height="450dp"
+            android:background="@drawable/dialog_bg">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/ordersummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginLeft="49dp"
+                    >
+                    <ImageView
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/order"
+                        />
+                    <custom_font.MyTextView
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MEDICAL REQUIREMENT"
+                        android:textColor="#ffffff"
+                        android:textSize="17dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="16dp"
+                        />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/ordernumber"
+                    android:layout_below="@+id/ordersummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="26dp"
+                    android:weightSum="1"
+                    >
+
+                    <custom_font.MyTextView
+                        android:id="@+id/hotel_txt"
+                        android:layout_weight="0.3"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Allergies: "
+                        android:textColor="@color/text"
+                        android:textSize="16dp"
+                        android:layout_gravity="center"
+                        />
+
+                    <custom_font.MyTextView
+                        android:id="@+id/allergies"
+                        android:layout_weight="0.7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/textred"
+                        android:textSize="21dp"
+                        android:maxLines="1"
+                        android:layout_marginLeft="6dp"
+
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/div1"
+                    android:layout_below="@+id/ordernumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="@color/div"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    ></View>
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/date"
+                    android:layout_below="@+id/div1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="55dp"
+                    >
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/address"
+                    android:layout_below="@+id/div1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="5dp"
+                    android:weightSum="1"
+                    >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="0.5"
+
+                    >
+
+                    <custom_font.MyTextView
+                        android:id="@+id/gender"
+                        android:layout_weight="0.1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Med Requirements: "
+                        android:textColor="@color/text"
+                        android:textSize="16dp"
+                        android:maxLines="1"
+                        android:layout_marginLeft="6dp"
+
+                        android:layout_gravity="center"
+                        />
+
+                    <custom_font.MyTextView
+                        android:id="@+id/medical"
+                        android:layout_weight="0.7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/textred"
+                        android:textSize="21dp"
+
+                        android:layout_gravity="center"
+                        />
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="0.5"
+                        >
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/items"
+                    android:layout_below="@+id/div3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:weightSum="1"
+                    >
+
+
+                    <LinearLayout
+                        android:layout_weight="0.5"
+                        android:layout_marginTop="6dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+
+                        >
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+                <View
+                    android:id="@+id/div4"
+                    android:layout_below="@+id/items"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="@color/div"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    ></View>
+
+
+
+                <LinearLayout
+                    android:id="@+id/total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentBottom="true"
+                    >
+
+
+
+                    <Button
+                        android:id="@+id/btn"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="OK"
+                        android:textColor="@color/textred"
+                        android:textSize="26dp"
+                        android:layout_marginLeft="1dp"
+                        android:gravity="center"
+
+                        android:layout_gravity="center"
+                        android:background="@drawable/btn_shape"
+                        />
+                    <Space
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

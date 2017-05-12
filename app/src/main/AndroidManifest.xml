@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.paz.happymiles">
 
     <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -32,7 +38,57 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".Home_Activity"></activity>
+        <activity android:name=".Home_Activity" />
+        <activity
+            android:name=".Student.Hotel_Detail"
+            android:theme="@style/CustomDialog1" />
+        <activity
+            android:name=".Student.Train_Detail"
+            android:theme="@style/CustomDialog1" />
+        <activity
+            android:name=".Student.Flight_Details"
+            android:theme="@style/CustomDialog1" />
+        <activity
+            android:name=".Student.Bus_Details"
+            android:theme="@style/CustomDialog1" />
+        <activity
+            android:name=".Student.Days_Details"
+            android:theme="@style/DetailActivityTheme" />
+        <activity android:name=".Student.Payment_webview" />
+        <activity android:name=".Faculty.MainActvity" />
+        <activity
+            android:name=".Student.Profile_Detail"
+            android:theme="@style/CustomDialog1" />
+        <activity
+            android:name=".Student.Guardian_Detail"
+            android:theme="@style/CustomDialog1" />
+        <activity
+            android:name=".Student.Meal_Pref"
+            android:theme="@style/CustomDialog1" />
+        <activity
+            android:name=".Student.Medical_Req"
+            android:theme="@style/CustomDialog1" />
+        <activity android:name=".Student.EditProfile" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider1040410019352442"
+            android:exported="true" />
+
+        <activity android:name=".Splash"></activity>
+
+        <service android:name=".FCM.FirebaseMessaing">
+            <intent-filter>
+                <action android:name="android.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".FCM.FirebaseInstaneIdService">
+            <intent-filter>
+                <action android:name="android.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".Forget_Password"></activity>
     </application>
 
 </manifest>

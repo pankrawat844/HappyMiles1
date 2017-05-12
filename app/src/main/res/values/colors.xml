@@ -13,5 +13,6 @@
     <color name="press_color">#ada</color>
     <color name="div">#d5c5a4</color>
     <color name="textred">#ca362c</color>
+    <color name="book_without_palette">#1C1D23</color>
 
 </resources>

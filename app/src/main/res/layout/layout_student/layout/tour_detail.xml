@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.paz.happymiles.Recylevie_animation.ObservableScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/activity_detail_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="248dp"
+            android:minHeight="?attr/actionBarSize"
+            >
+
+            <ImageView
+                android:id="@+id/activity_detail_cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                />
+        </android.support.v7.widget.Toolbar>
+        <FrameLayout
+            android:id="@+id/activity_detail_main_container"
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:layout_below="@id/activity_detail_toolbar"
+            android:elevation="4dp"
+            android:background="?colorPrimary"
+            >
+
+            <RelativeLayout
+                android:id="@+id/activity_detail_titles_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="48dp"
+                android:layout_marginRight="48dp"
+                android:visibility="invisible"
+                >
+
+                <TextView
+                    android:id="@+id/activity_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:ellipsize="end"
+                    android:textSize="24sp"
+                    android:maxLines="2"
+                    android:textColor="#FFF"
+                    />
+
+                <TextView
+                    android:id="@+id/activity_detail_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/activity_detail_title"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="The best subtitle"
+                    android:maxLines="1"
+                    android:visibility="invisible"
+                    android:ellipsize="end"
+                    android:textColor="#FFF"
+                    />
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/activity_detail_fab"
+            android:layout_width="@dimen/fab_size"
+            android:layout_height="@dimen/fab_size"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/activity_detail_toolbar"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="-26dp"
+            android:background="@drawable/ripple_round"
+            android:elevation="4dp"
+            android:src="@drawable/ic_file_download_white_36dp"
+            android:stateListAnimator="@anim/fab_animation"
+            android:transitionName="fab"
+            android:visibility="invisible"
+            />
+
+        <FrameLayout
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_detail_toolbar"
+            android:layout_gravity="center"
+            android:layout_marginBottom="?attr/actionBarSize"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            >
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/activity_detail_book_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:background="#EEEEEE"
+            android:layout_below="@id/activity_detail_main_container"
+            >
+
+            <TextView
+                android:id="@+id/activity_detail_summary_title"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Summary"
+                style="@style/OpenLibraHeaderTextView"
+                />
+
+            <TextView
+                android:id="@+id/activity_detail_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="6dp"
+                android:text="dsadasdsdsadsadsdasdasd"
+                />
+
+            <TextView
+                android:id="@+id/activity_detail_rating_title"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Rating"
+                android:visibility="invisible"
+                style="@style/OpenLibraHeaderTextView"
+                />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/activity_detail_rating_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textAllCaps="true"
+                android:textSize="50sp"
+                android:text="7.9"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+</com.paz.happymiles.Recylevie_animation.ObservableScrollView>
+
