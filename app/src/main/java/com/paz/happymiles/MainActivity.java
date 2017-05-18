@@ -94,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
                                     SharedPreferences.Editor editor= sharedPreferences.edit();
                                     editor.putBoolean("islogin",true);
                                     editor.putString("first_name",jsonObject.getString("first_name"));
+                                    editor.putString("middle_name",jsonObject.getString("middle_name"));
+                                    editor.putString("last_name",jsonObject.getString("surname"));
                                     editor.putString("gender",jsonObject.getString("gender"));
                                     editor.putString("rollno",jsonObject.getString("rollno"));
                                     editor.putString("email",jsonObject.getString("email"));

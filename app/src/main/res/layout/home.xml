@@ -1,27 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/home"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-
-    tools:context="com.paz.happymiles.Home_Activity">
+    android:layout_height="match_parent">
 
 
-<android.support.v4.view.ViewPager
-    android:id="@+id/viewpager"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_above="@+id/tab"></android.support.v4.view.ViewPager>
-
-
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tab"
-        android:background="#eae7e7"
-        app:tabTextAppearance="@style/TabText"
-        app:tabSelectedTextColor="@color/appthemecolor"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"></android.support.design.widget.TabLayout>
-</RelativeLayout>
+        android:layout_height="200dp"
+        android:background="@drawable/top"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:civ_border_width="3dp"
+            android:layout_centerInParent="true"
+            app:civ_border_color="@color/appthemecolor"
+            android:visibility="invisible"
+            android:src="@drawable/user"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:shrinkColumns="*"  android:stretchColumns="1">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <RelativeLayout
+                    android:id="@+id/personal_relative"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:elevation="8dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_circle">
+                    <ImageView
+                        android:id="@+id/personal_info_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/person"
+                        android:layout_centerInParent="true"
+                        />
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/daily_relative"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:elevation="8dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_circle">
+
+                    <ImageView
+                        android:id="@+id/daily_internity_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/daily"
+                        android:layout_centerInParent="true"
+                        />
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/tour_cordinator_img"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:elevation="8dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_circle">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tour_cordinator"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:weightSum="3">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_below="@+id/personal_info_img"
+
+                    >
+                    <custom_font.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text"
+                        android:text="Personal Information"/>
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+
+                    android:layout_below="@+id/daily_internity_img"
+
+                    >
+                    <custom_font.MyTextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textSize="@dimen/text"
+                        android:textStyle="bold"
+
+                        android:text="Daily Iternity"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_below="@+id/tour_cordinator_img"
+
+                    >
+                    <custom_font.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textSize="@dimen/text"
+                        android:textStyle="bold"
+
+                        android:text="Tour Cordinator"/>
+                </RelativeLayout>
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <RelativeLayout
+                    android:id="@+id/hotel_rel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:elevation="8dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_circle">
+                    <ImageView
+                        android:id="@+id/hotel_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/hotel"
+                        android:layout_centerInParent="true"
+                        />
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/transport"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:elevation="8dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_circle">
+
+                    <ImageView
+                        android:id="@+id/transport_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/flight"
+                        android:layout_centerInParent="true"
+                        />
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/payment_img"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:elevation="8dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_circle">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/payment"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:weightSum="3">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_below="@+id/personal_info_img"
+
+                    >
+                    <custom_font.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="@dimen/text"
+                        android:textStyle="bold"
+
+                        android:text="Hotel Information"/>
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_below="@+id/daily_internity_img"
+
+                    >
+                    <custom_font.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textSize="@dimen/text"
+                        android:textStyle="bold"
+
+                        android:text="Transport Details"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_below="@+id/tour_cordinator_img"
+
+                    >
+                    <custom_font.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textSize="@dimen/text"
+                        android:textStyle="bold"
+
+                        android:text="Payment"/>
+                </RelativeLayout>
+            </TableRow>
+
+        </TableLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -12,5 +12,6 @@ public class ConstantUrls {
      public static String get_iternity="http://paztechnologies.com/happy_miles/app/get_tour_itnernity.php";
      public static String uplaod_profile_pic="http://paztechnologies.com/happy_miles/app/upload_image.php";
      public static String student_contact="http://paztechnologies.com/happy_miles/app/get_all_students.php";
+     public static String update_profile="http://paztechnologies.com/happy_miles/app/student_details_update.php";
 
 }

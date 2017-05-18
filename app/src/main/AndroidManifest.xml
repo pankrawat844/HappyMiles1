@@ -39,9 +39,7 @@
             android:value="@string/facebook_app_id" />
 
         <activity android:name=".Home_Activity" />
-        <activity
-            android:name=".Student.Hotel_Detail"
-            android:theme="@style/CustomDialog1" />
+        <activity android:name=".Student.Hotel_Detail" />
         <activity
             android:name=".Student.Train_Detail"
             android:theme="@style/CustomDialog1" />
@@ -55,7 +53,6 @@
             android:name=".Student.Days_Details"
             android:theme="@style/DetailActivityTheme" />
         <activity android:name=".Student.Payment_webview" />
-        <activity android:name=".Faculty.MainActvity" />
         <activity
             android:name=".Student.Profile_Detail"
             android:theme="@style/CustomDialog1" />
@@ -75,7 +72,7 @@
             android:authorities="com.facebook.app.FacebookContentProvider1040410019352442"
             android:exported="true" />
 
-        <activity android:name=".Splash"></activity>
+        <activity android:name=".Splash" />
 
         <service android:name=".FCM.FirebaseMessaing">
             <intent-filter>
@@ -88,7 +85,13 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".Forget_Password"></activity>
+        <activity android:name=".Forget_Password" />
+        <activity android:name=".Student.About_Tour" />
+        <activity android:name=".Student.Profile" />
+        <activity android:name=".Student.Payment" />
+        <activity android:name=".Hotel_Day_Detail" />
+        <activity android:name=".Transport_Detail" />
+        <activity android:name=".Tour_Cordinator"></activity>
     </application>
 
 </manifest>

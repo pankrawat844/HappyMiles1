@@ -21,6 +21,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -30,12 +32,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.eminayar.panter.DialogType;
-import com.eminayar.panter.PanterDialog;
-import com.eminayar.panter.interfaces.OnTextInputConfirmListener;
+
 import com.paz.happymiles.Connection.Connectivity;
 import com.paz.happymiles.Session.SessionManager;
 import com.paz.happymiles.Student.About_Tour;
+import com.paz.happymiles.Student.Hotel_Detail;
 import com.paz.happymiles.Student.Payment;
 import com.paz.happymiles.Student.Profile;
 import com.paz.happymiles.Student.Tour_Details;
@@ -48,130 +49,77 @@ import java.util.Map;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
-public class Home_Activity extends AppCompatActivity implements TabLayout.OnTabSelectedListener {
-    TabLayout tabLayout;
-    ViewPager viewPager;
+public class Home_Activity extends AppCompatActivity {
+    RelativeLayout personal_relative,daily_relative,payment,tour_codinator,hotel_info,transpor_detail;
+    ImageView daily_internity_img;
     SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-        tabLayout = (TabLayout) findViewById(R.id.tab);
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-        sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);
 
-        if (sharedPreferences.getBoolean("finish", false)) {
-            SharedPreferences.Editor editor= sharedPreferences.edit();
-            editor.putBoolean("finish",false);
-            editor.commit();
-            finish();
-        } else {
-            if (!sharedPreferences.getBoolean("tour_code_enter", false)) {
+        sharedPreferences= getSharedPreferences("pref",0);
+        personal_relative=(RelativeLayout)findViewById(R.id.personal_relative);
+        daily_relative=(RelativeLayout) findViewById(R.id.daily_relative);
+        payment=(RelativeLayout)findViewById(R.id.payment_img);
+        hotel_info=(RelativeLayout)findViewById(R.id.hotel_rel);
+        tour_codinator=(RelativeLayout)findViewById(R.id.tour_cordinator_img);
+        transpor_detail=(RelativeLayout)findViewById(R.id.transport);
+        daily_relative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-                call_dialog();
-            } else {
-                tabLayout.addTab(tabLayout.newTab().setText("About Tour").setIcon(R.mipmap.abt1));
-                tabLayout.addTab(tabLayout.newTab().setText("Tour Details").setIcon(R.mipmap.tour1));
-                tabLayout.addTab(tabLayout.newTab().setText("Payment").setIcon(R.mipmap.payment1));
-                tabLayout.addTab(tabLayout.newTab().setText("My Profile").setIcon(R.mipmap.profile1));
-
-
-                Home_TabAdapter tabAdapter = new Home_TabAdapter(getSupportFragmentManager(), 4);
-                viewPager.setAdapter(tabAdapter);
-                // tabLayout.setupWithViewPager(viewPager);
-                tabLayout.setOnTabSelectedListener(Home_Activity.this);
-                tabLayout.setSelectedTabIndicatorColor(ContextCompat.getColor(Home_Activity.this, R.color.appthemecolor));
-
-                viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
+                Intent in= new Intent(Home_Activity.this,About_Tour.class);
+                startActivity(in);
             }
+        });
+        if (!sharedPreferences.getBoolean("tour_code_enter", false)) {
 
-
-        }
-    }
-    @Override
-    public void onTabSelected(TabLayout.Tab tab) {
-        viewPager.setCurrentItem(tab.getPosition());
-        tabLayout.getTabAt(tab.getPosition()).select();
-        if (tab.getPosition() == 0) {
-
-            tabLayout.getTabAt(tab.getPosition()).setIcon(R.mipmap.abt2);
-            tabLayout.getTabAt(1).setIcon(R.mipmap.tour1);
-            tabLayout.getTabAt(2).setIcon(R.mipmap.payment1);
-            tabLayout.getTabAt(3).setIcon(R.mipmap.profile1);
-        }
-        if (tab.getPosition() == 1) {
-            tabLayout.getTabAt(tab.getPosition()).setIcon(R.mipmap.tour2);
-            tabLayout.getTabAt(0).setIcon(R.mipmap.abt1);
-            tabLayout.getTabAt(2).setIcon(R.mipmap.payment1);
-            tabLayout.getTabAt(3).setIcon(R.mipmap.profile1);
-        }
-        if (tab.getPosition() == 2) {
-            tabLayout.getTabAt(tab.getPosition()).setIcon(R.mipmap.payment2);
-            tabLayout.getTabAt(0).setIcon(R.mipmap.abt1);
-            tabLayout.getTabAt(1).setIcon(R.mipmap.tour1);
-            tabLayout.getTabAt(3).setIcon(R.mipmap.profile1);
+            call_dialog();
 
         }
-        if (tab.getPosition() == 3) {
-            tabLayout.getTabAt(tab.getPosition()).setIcon(R.mipmap.profile2);
-            tabLayout.getTabAt(0).setIcon(R.mipmap.abt1);
-            tabLayout.getTabAt(1).setIcon(R.mipmap.tour1);
-            tabLayout.getTabAt(2).setIcon(R.mipmap.payment1);
-
-        }
-    }
-
-    @Override
-    public void onTabUnselected(TabLayout.Tab tab) {
-
-    }
-
-    @Override
-    public void onTabReselected(TabLayout.Tab tab) {
-
-    }
-
-
-    private class Home_TabAdapter extends FragmentStatePagerAdapter {
-        List<String> tabs;
-        int tabcount;
-
-        public Home_TabAdapter(FragmentManager fm, int tabcount) {
-
-            super(fm);
-            this.tabcount = tabcount;
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            switch (position) {
-                case 0:
-                    About_Tour about_tour = new About_Tour();
-                    return about_tour;
-
-                case 1:
-                    Tour_Details tour_details = new Tour_Details();
-                    return tour_details;
-                case 2:
-                    Payment payment = new Payment();
-                    return payment;
-                case 3:
-                    Profile profile = new Profile();
-                    return profile;
-                default:
-                    About_Tour tour = new About_Tour();
-                    return tour;
+            payment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent= new Intent(Home_Activity.this,Payment.class);
+                    startActivity(intent);
+                }
+            });
+        personal_relative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(Home_Activity.this,Profile.class);
+                startActivity(intent);
             }
-        }
+        });
 
 
-        @Override
-        public int getCount() {
-            return tabcount;
-        }
+        hotel_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Home_Activity.this, Hotel_Detail.class);
+                startActivity(in);
+            }
+        });
 
+        transpor_detail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Home_Activity.this, Transport_Detail.class);
+                startActivity(in);
+            }
+        });
+
+
+        tour_codinator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Home_Activity.this, Tour_Cordinator.class);
+                startActivity(in);
+            }
+        });
     }
+
 
     private void call_dialog() {
        final Dialog dialog = new Dialog(Home_Activity.this, R.style.CustomDialog2);
@@ -207,25 +155,13 @@ public class Home_Activity extends AppCompatActivity implements TabLayout.OnTabS
                                     editor.putString("tour_code",tour_code.getText().toString());
                                     editor.putBoolean("tour_code_enter",true);
                                     editor.commit();
-                                    tabLayout.addTab(tabLayout.newTab().setText("About Tour").setIcon(R.mipmap.abt1));
-                                    tabLayout.addTab(tabLayout.newTab().setText("Tour Details").setIcon(R.mipmap.tour1));
-                                    tabLayout.addTab(tabLayout.newTab().setText("Payment").setIcon(R.mipmap.payment1));
-                                    tabLayout.addTab(tabLayout.newTab().setText("My Profile").setIcon(R.mipmap.profile1));
                                     dialo.dismiss();
                                     dialog.dismiss();
 
-                                    Home_TabAdapter tabAdapter = new Home_TabAdapter(getSupportFragmentManager(), 4);
-                                    viewPager.setAdapter(tabAdapter);
-                                    // tabLayout.setupWithViewPager(viewPager);
-                                    tabLayout.setOnTabSelectedListener(Home_Activity.this);
-                                    tabLayout.setSelectedTabIndicatorColor(ContextCompat.getColor(Home_Activity.this, R.color.appthemecolor));
-
-                                    viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
                                 } else {
                                     dialo.dismiss();
                                     Toast.makeText(Home_Activity.this, "Wrong Tour Code.Please Enter Correct Details.", 3).show();
-                                    exit.setVisibility(View.VISIBLE);
                                 }
 
                             } catch (Exception e) {

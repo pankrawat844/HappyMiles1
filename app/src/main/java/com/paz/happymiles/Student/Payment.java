@@ -1,9 +1,11 @@
 package com.paz.happymiles.Student;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -17,21 +19,22 @@ import com.paz.happymiles.R;
  * Created by Admin on 2/27/2017.
  */
 
-public class Payment extends Fragment {
-    @Nullable
+public class Payment extends FragmentActivity {
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.payment,container,false);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
+
+        setContentView(R.layout.payment);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("CREDIT CARD"));
         tabLayout.addTab(tabLayout.newTab().setText("NET BANKING"));
     //    tabLayout.addTab(tabLayout.newTab().setText("WALLET"));
         tabLayout.addTab(tabLayout.newTab().setText("CASH ON DELIVERY"));
 
-        final ViewPager viewPager = (ViewPager)view.findViewById(R.id.pager);
+        final ViewPager viewPager = (ViewPager)findViewById(R.id.pager);
 
-        PagerAdapter1 adapter = new PagerAdapter1(getChildFragmentManager(), tabLayout.getTabCount());
+        PagerAdapter1 adapter = new PagerAdapter1(getSupportFragmentManager(), tabLayout.getTabCount());
 
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -51,7 +54,6 @@ public class Payment extends Fragment {
 
             }
         });
-        return view;
     }
 
 
