@@ -67,23 +67,23 @@
             android:theme="@style/CustomDialog1" />
         <activity android:name=".Student.EditProfile" />
 
-        <provider
-            android:name="com.facebook.FacebookContentProvider"
-            android:authorities="com.facebook.app.FacebookContentProvider1040410019352442"
-            android:exported="true" />
+        <!--<provider-->
+        <!--android:name="com.facebook.FacebookContentProvider"-->
+        <!--android:authorities="com.facebook.app.FacebookContentProvider1040410019352442"-->
+        <!--android:exported="true" />-->
 
         <activity android:name=".Splash" />
 
-        <service android:name=".FCM.FirebaseMessaing">
-            <intent-filter>
-                <action android:name="android.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
-        <service android:name=".FCM.FirebaseInstaneIdService">
-            <intent-filter>
-                <action android:name="android.google.firebase.INSTANCE_ID_EVENT" />
-            </intent-filter>
-        </service>
+        <!--<service android:name=".FCM.FirebaseMessaing">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.google.firebase.MESSAGING_EVENT" />-->
+        <!--</intent-filter>-->
+        <!--</service>-->
+        <!--<service android:name=".FCM.FirebaseInstaneIdService">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.google.firebase.INSTANCE_ID_EVENT" />-->
+        <!--</intent-filter>-->
+        <!--</service>-->
 
         <activity android:name=".Forget_Password" />
         <activity android:name=".Student.About_Tour" />

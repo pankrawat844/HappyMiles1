@@ -189,6 +189,7 @@ public class Signup extends AppCompatActivity {
                             Toast.makeText(Signup.this,response,3).show();
                             Intent intent = new Intent(Signup.this, MainActivity.class);
                             startActivity(intent);
+                            finish();
                         }else{
 
                             Toast.makeText(Signup.this,"Something went wrong,Plese try again",3).show();

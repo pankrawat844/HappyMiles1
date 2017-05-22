@@ -22,16 +22,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.facebook.AccessToken;
-import com.facebook.AccessTokenTracker;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.login.LoginManager;
-import com.facebook.login.LoginResult;
+
 import com.paz.happymiles.Connection.Connectivity;
 import com.paz.happymiles.Session.SessionManager;
 
@@ -50,18 +41,18 @@ public class MainActivity extends AppCompatActivity {
     Button login;
     MyTextView signup,forget_password;
     EditText email,password;
-    CallbackManager mFacebookCallbackManager;
-    LoginManager mLoginManager;
+    //    CallbackManager mFacebookCallbackManager;
+//    LoginManager mLoginManager;
     FancyButton FacebookLogin;
     TextView mUserNameTextView;
     StringRequest stringRequest;
-    AccessTokenTracker mAccessTokenTracker;
+    // AccessTokenTracker mAccessTokenTracker;
     RequestQueue requestQueue;
     SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FacebookSdk.sdkInitialize(getApplicationContext());
+        // FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.main_activity);
          requestQueue= Volley.newRequestQueue(this);
             sharedPreferences= getSharedPreferences("pref",MODE_PRIVATE);
@@ -71,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
         init();
-        setupFacebookStuff();
+        //setupFacebookStuff();
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -155,16 +146,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-        FacebookLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (AccessToken.getCurrentAccessToken() != null)
-                    mLoginManager.logOut();
-
-                handleFacebookLogin();
-            }
-        });
+//        FacebookLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (AccessToken.getCurrentAccessToken() != null)
+//                    mLoginManager.logOut();
+//
+//                handleFacebookLogin();
+//            }
+//        });
 
         forget_password.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -188,109 +178,108 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    private void setupFacebookStuff() {
-
-        // This should normally be on your application class
-
-        mAccessTokenTracker = new AccessTokenTracker() {
-            @Override
-            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
-                //updateFacebookButtonUI();
-            }
-        };
-
-        mLoginManager = LoginManager.getInstance();
-        mFacebookCallbackManager = CallbackManager.Factory.create();
-
-        LoginManager.getInstance().registerCallback(mFacebookCallbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-
-                //updateFacebookButtonUI();
-
-                GraphRequest request = GraphRequest.newMeRequest(
-                        loginResult.getAccessToken(),
-                        new GraphRequest.GraphJSONObjectCallback() {
-                            @Override
-                            public void onCompleted(JSONObject object, GraphResponse response) {
-
-                                    Log.i("information",object.toString());
-                                try {
-                                    String email = object.getString("email");
-                                    String birthday = object.getString("birthday");
-                                    String id = object.getString("id");
-                                    String name = object.getString("name");
-                                   // tv_profile_name.setText(name);
-
-
-                                    String imageurl = "https://graph.facebook.com/" + id + "/picture?type=large";
-
-                                  //  Picasso.with(MainActivity.this).load(imageurl).into(iv_profile_pic);
-                                 //   SessionManager sessionManager= new SessionManager(this);
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-
-                            }
-
-                        });
-
-
-                Bundle parameters = new Bundle();
-                parameters.putString("fields", "id,name,email,gender, birthday");
-                request.setParameters(parameters);
-                request.executeAsync();
-
-
-/**
- * AccessTokenTracker to manage logout
- */
-                mAccessTokenTracker = new AccessTokenTracker() {
-                    @Override
-                    protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
-                        if (currentAccessToken == null) {
-//                            tv_profile_name.setText("");
-//                            iv_profile_pic.setImageResource(R.drawable.maleicon);
-                        }
-                    }
-                };
-            }
-
-            @Override
-            public void onCancel() {
-
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-
-            }
-        });
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        mFacebookCallbackManager.onActivityResult(requestCode, resultCode, data);
-    }
+//    private void setupFacebookStuff() {
+//
+//        // This should normally be on your application class
+//
+//        mAccessTokenTracker = new AccessTokenTracker() {
+//            @Override
+//            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
+//                //updateFacebookButtonUI();
+//            }
+//        };
+//
+//        mLoginManager = LoginManager.getInstance();
+//        mFacebookCallbackManager = CallbackManager.Factory.create();
+//
+//        LoginManager.getInstance().registerCallback(mFacebookCallbackManager, new FacebookCallback<LoginResult>() {
+//            @Override
+//            public void onSuccess(LoginResult loginResult) {
+//
+//                //updateFacebookButtonUI();
+//
+//                GraphRequest request = GraphRequest.newMeRequest(
+//                        loginResult.getAccessToken(),
+//                        new GraphRequest.GraphJSONObjectCallback() {
+//                            @Override
+//                            public void onCompleted(JSONObject object, GraphResponse response) {
+//
+//                                    Log.i("information",object.toString());
+//                                try {
+//                                    String email = object.getString("email");
+//                                    String birthday = object.getString("birthday");
+//                                    String id = object.getString("id");
+//                                    String name = object.getString("name");
+//                                   // tv_profile_name.setText(name);
+//
+//
+//                                    String imageurl = "https://graph.facebook.com/" + id + "/picture?type=large";
+//
+//                                  //  Picasso.with(MainActivity.this).load(imageurl).into(iv_profile_pic);
+//                                 //   SessionManager sessionManager= new SessionManager(this);
+//                                } catch (JSONException e) {
+//                                    e.printStackTrace();
+//                                }
+//
+//                            }
+//
+//                        });
+//
+//
+//                Bundle parameters = new Bundle();
+//                parameters.putString("fields", "id,name,email,gender, birthday");
+//                request.setParameters(parameters);
+//                request.executeAsync();
+//
+//
+///**
+// * AccessTokenTracker to manage logout
+// */
+//                mAccessTokenTracker = new AccessTokenTracker() {
+//                    @Override
+//                    protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
+//                        if (currentAccessToken == null) {
+////                            tv_profile_name.setText("");
+////                            iv_profile_pic.setImageResource(R.drawable.maleicon);
+//                        }
+//                    }
+//                };
+//            }
+//
+//            @Override
+//            public void onCancel() {
+//
+//            }
+//
+//            @Override
+//            public void onError(FacebookException error) {
+//
+//            }
+//        });
+//    }
+//
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        mFacebookCallbackManager.onActivityResult(requestCode, resultCode, data);
+//    }
 
     @Override
     protected void onStop() {
         super.onStop();
-        mAccessTokenTracker.stopTracking();
+        // mAccessTokenTracker.stopTracking();
       //  profileTracker.stopTracking();
     }
 
-    private void handleFacebookLogin() {
-        if (AccessToken.getCurrentAccessToken() != null){
-           mLoginManager.logOut();
-        }else{
-            mAccessTokenTracker.startTracking();
-            mLoginManager.logInWithReadPermissions(MainActivity.this, Arrays.asList("public_profile,email, user_birthday, user_friends"));
-        }
-
-    }
+//    private void handleFacebookLogin() {
+//        if (AccessToken.getCurrentAccessToken() != null){
+//           mLoginManager.logOut();
+//        }else{
+//            mAccessTokenTracker.startTracking();
+//            mLoginManager.logInWithReadPermissions(MainActivity.this, Arrays.asList("public_profile,email, user_birthday, user_friends"));
+//        }
+//
+//    }
 
 
     @Override

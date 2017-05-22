@@ -54,6 +54,7 @@
                     android:textColor="@android:color/white"
                     android:background="@drawable/custom_edittext"
                     android:textSize="@dimen/edit_text"
+
                     android:letterSpacing="0.1"/>
 
 </RelativeLayout>

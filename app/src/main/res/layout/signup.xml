@@ -38,6 +38,7 @@
         android:layout_height="wrap_content"
         android:textColorHint="#ffffff"
         android:hint=" Full Name"
+
         android:layout_gravity="center"
         android:inputType="text"
         android:paddingLeft="15dp"

@@ -126,7 +126,12 @@ public class Profile extends Activity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                upate_data();
+                if (passport_first_name.getText().toString().equals("") || passpost_middle_name.getText().toString().equals("") || passpost_last_name.getText().toString().equals("") || passport_no.getText().toString().equals("") || passpost_last_name.getText().toString().equals("") || meal_pref.getText().toString().equals("") || email.getText().toString().equals("") || emer_contact_no.getText().toString().equals("") || dob.getText().toString().equals("")
+                        || nationality.getText().toString().equals("") || gardian_name.getText().toString().equals("") || gardian_no.getText().toString().equals("") || allergies.getText().toString().equals("") || medication_req.getText().toString().equals("") || blood_grp.getText().toString().equals("") || batch.getText().toString().equals("") || roll_no.getText().toString().equals("") || standard.getText().toString().equals("")) {
+                    Toast.makeText(getApplicationContext(), "All Field Are Mandatory", Toast.LENGTH_LONG).show();
+                } else {
+                    upate_data();
+                }
             }
         });
     }
@@ -159,7 +164,6 @@ public class Profile extends Activity {
         meal_pref=(EditText)findViewById(R.id.meals);
         submit=(Button)findViewById(R.id.next);
         special_note.setFilters(new InputFilter[]{new InputFilter.LengthFilter(500)});
-
         passport_first_name.setText(sharedPreferences.getString("first_name",""));
         passpost_middle_name.setText(sharedPreferences.getString("middle_name",""));
         passpost_last_name.setText(sharedPreferences.getString("last_name",""));
@@ -334,6 +338,7 @@ public class Profile extends Activity {
             public void onResponse(String response) {
 
                 Log.e("result",response);
+
             }
         }, new Response.ErrorListener() {
             @Override
