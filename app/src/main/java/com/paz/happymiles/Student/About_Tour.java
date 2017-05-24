@@ -166,7 +166,7 @@ public class About_Tour extends Activity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     HashMap<String, String> param = new HashMap<String, String>();
-                    param.put("tour_code","donmum18001");
+                    param.put("tour_code", sharedPreferences.getString("tour_code", ""));
                     return param;
                 }
             };

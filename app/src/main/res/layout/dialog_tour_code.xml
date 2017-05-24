@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Enter Your Tour Code : "
+
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <custom_font.MyEditText

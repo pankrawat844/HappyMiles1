@@ -132,7 +132,7 @@ public class Hotel_Detail extends Activity {
             dialog.setTitleText("Loading");
             dialog.setCancelable(false);
             dialog.show();
-            StringRequest stringRequest = new StringRequest(Request.Method.POST,ConstantUrls.get_iternity ,new Response.Listener<String>() {
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, ConstantUrls.hotel_detail, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                  //   Toast.makeText(getApplicationContext(), response.toString(), 3).show();
@@ -142,7 +142,7 @@ public class Hotel_Detail extends Activity {
                         dialog.dismiss();
                         for (int i = 0; i < arr.length(); i++) {
                             JSONObject jsonObject = arr.getJSONObject(i);
-                            Hotel_Detail_Pojo pojo = new Hotel_Detail_Pojo("Welcom","123456789","Rz-30,Old Rajapuri,Uttam Nagar","https://www.omnihotels.com/-/media/images/hotels/ausctr/pool/ausctr-omni-austin-hotel-downtown-evening-pool.jpg?h=660&la=en&w=1170","1");
+                            Hotel_Detail_Pojo pojo = new Hotel_Detail_Pojo(jsonObject.getString("hotel_name"), jsonObject.getString("hotel_cntct_no"), jsonObject.getString("hotel_location"), "http://" + jsonObject.getString("hotel_img"), jsonObject.getString("day"));
                             list.add(pojo);
                         }
                         home_adapter.notifyDataSetChanged();
@@ -155,9 +155,9 @@ public class Hotel_Detail extends Activity {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     dialog.dismiss();
-                    Hotel_Detail_Pojo pojo = new Hotel_Detail_Pojo("Welcome Hotel","123456789","Rz-30,Old Rajapuri,Uttam Nagar","https://www.omnihotels.com/-/media/images/hotels/ausctr/pool/ausctr-omni-austin-hotel-downtown-evening-pool.jpg?h=660&la=en&w=1170","1");
-                    list.add(pojo);
-                    home_adapter.notifyDataSetChanged();
+//                    Hotel_Detail_Pojo pojo = new Hotel_Detail_Pojo("Welcome Hotel","123456789","Rz-30,Old Rajapuri,Uttam Nagar","https://www.omnihotels.com/-/media/images/hotels/ausctr/pool/ausctr-omni-austin-hotel-downtown-evening-pool.jpg?h=660&la=en&w=1170","1");
+//                    list.add(pojo);
+//                    home_adapter.notifyDataSetChanged();
                 }
             }
             ) {

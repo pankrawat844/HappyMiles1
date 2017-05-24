@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.volley.toolbox.StringRequest;
 import com.paz.happymiles.Recylevie_animation.CustomAnimatorListener;
 import com.paz.happymiles.Recylevie_animation.CustomTransitionListener;
 import com.paz.happymiles.Recylevie_animation.Utils;
@@ -24,6 +25,7 @@ import com.paz.happymiles.Student.About_Tour;
 import com.paz.happymiles.Student.Hotel_Detail;
 import com.paz.happymiles.Student_Pojo.About_tour_pojo;
 import com.paz.happymiles.Student_Pojo.Hotel_Detail_Pojo;
+import com.squareup.picasso.Picasso;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -63,16 +65,18 @@ public class Hotel_Day_Detail extends Activity{
         final int position = getIntent().getIntExtra("position", 0);
         pojo = (Hotel_Detail_Pojo) getIntent().getSerializableExtra("selected_book");
         Bitmap bookCoverBitmap = Hotel_Detail.photoCache.get(position);
+        String img = pojo.getHotel_img();
         //  Bitmap bookCoverBitmap = BitmapFactory.decodeResource(getResources(),R.drawable.arrow);
 
         ImageView toolbarBookCover = (ImageView) findViewById(R.id.activity_detail_cover);
-        toolbarBookCover.setImageBitmap(bookCoverBitmap);
+        //toolbarBookCover.setImageBitmap(bookCoverBitmap);
         fabButton.setScaleX(0);
         fabButton.setScaleY(0);
         Utils.configureHideYView(contentCard);
         Utils.configureHideYView(bookInfoLayout);
         Utils.configureHideYView(mainContaienr);
-        toolbar.setBackground(new BitmapDrawable(getResources(), bookCoverBitmap));
+        //   toolbar.setBackground(new BitmapDrawable(getResources(), bookCoverBitmap));
+        Picasso.with(this).load(img).fit().error(R.drawable.bg).into(toolbarBookCover);
         //  toolbar.setBackgroundResource(R.drawable.bg);
         toolbar.setTransitionName("cover" + position);
         getWindow().getSharedElementEnterTransition().addListener(sharedTransitionListener);

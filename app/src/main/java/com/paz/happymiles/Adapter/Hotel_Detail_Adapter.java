@@ -57,9 +57,9 @@ public class Hotel_Detail_Adapter extends RecyclerView.Adapter<Hotel_Detail_Adap
     @Override
     public void onBindViewHolder(viewholder holder, int position) {
         final  Hotel_Detail_Pojo pojo= list.get(position);
-        Picasso.with(ctx).load(pojo.getHotel_img()).placeholder(R.drawable.bg).error(R.drawable.bg).into(holder.imgview);
+        Picasso.with(ctx).load(pojo.getHotel_img()).error(R.drawable.bg).into(holder.imgview);
         holder.imgview.setDrawingCacheEnabled(true);
-
+        holder.days.setText(pojo.getDay());
         Bitmap bookCoverBitmap = BitmapFactory.decodeResource(ctx.getResources(),R.drawable.arrow);
         setCellColors(bookCoverBitmap, holder, position);
         amimateCell(holder);

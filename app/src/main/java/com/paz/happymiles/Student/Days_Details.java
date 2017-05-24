@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.transition.Transition;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.view.animation.AnimationUtils;
@@ -16,10 +18,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.paz.happymiles.R;
 import com.paz.happymiles.Recylevie_animation.CustomAnimatorListener;
 import com.paz.happymiles.Recylevie_animation.CustomTransitionListener;
+import com.paz.happymiles.Recylevie_animation.ObservableScrollView;
 import com.paz.happymiles.Recylevie_animation.Utils;
 import com.paz.happymiles.Student_Pojo.About_tour_pojo;
 
@@ -34,6 +38,8 @@ public class Days_Details extends Activity {
 
 
     @InjectView(R.id.card_view) FrameLayout contentCard;
+    @InjectView(R.id.scroll)
+    ObservableScrollView scrollView;
 
     @InjectView(R.id.activity_detail_main_container)    View mainContaienr;
     @InjectView(R.id.activity_detail_titles_container)  View titlesContainer;
@@ -63,7 +69,7 @@ public class Days_Details extends Activity {
       //  Bitmap bookCoverBitmap = BitmapFactory.decodeResource(getResources(),R.drawable.arrow);
 
         ImageView toolbarBookCover = (ImageView) findViewById(R.id.activity_detail_cover);
-        toolbarBookCover.setImageBitmap(bookCoverBitmap);
+        //toolbarBookCover.setImageBitmap(bookCoverBitmap);
         fabButton.setScaleX(0);
         fabButton.setScaleY(0);
         Utils.configureHideYView(contentCard);
@@ -74,6 +80,58 @@ public class Days_Details extends Activity {
         toolbar.setTransitionName("cover" + position);
         getWindow().getSharedElementEnterTransition().addListener(sharedTransitionListener);
         Palette.generateAsync(bookCoverBitmap, paletteListener);
+
+        toolbar.setOnTouchListener(new View.OnTouchListener() {
+
+            private GestureDetector gestureDetector = new GestureDetector(Days_Details.this, new GestureDetector.SimpleOnGestureListener() {
+
+                @Override
+                public boolean onSingleTapUp(MotionEvent e) {
+                    // Toast.makeText(getApplicationContext(),"single tap",3).show();
+                    return super.onSingleTapUp(e);
+                }
+
+                @Override
+                public boolean onDoubleTap(MotionEvent e) {
+                    onBackPressed();
+                    // Toast.makeText(getApplicationContext(),"double tap",3).show();
+                    return super.onDoubleTap(e);
+                }
+            });
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                gestureDetector.onTouchEvent(event);
+
+                return false;
+            }
+        });
+
+        scrollView.setOnTouchListener(new View.OnTouchListener() {
+
+            private GestureDetector gestureDetector = new GestureDetector(Days_Details.this, new GestureDetector.SimpleOnGestureListener() {
+
+                @Override
+                public boolean onSingleTapUp(MotionEvent e) {
+                    // Toast.makeText(getApplicationContext(),"single tap",3).show();
+
+                    return super.onSingleTapUp(e);
+                }
+
+                @Override
+                public boolean onDoubleTap(MotionEvent e) {
+                    // Toast.makeText(getApplicationContext(),"double tap",3).show();
+                    onBackPressed();
+                    return super.onDoubleTap(e);
+                }
+            });
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                gestureDetector.onTouchEvent(event);
+                return false;
+            }
+        });
     }
 
 
@@ -102,6 +160,7 @@ public class Days_Details extends Activity {
             showTitleAnimator.start();
         }
     };
+
     @Override
     public void onBackPressed() {
 

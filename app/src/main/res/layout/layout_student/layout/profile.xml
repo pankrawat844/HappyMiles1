@@ -42,7 +42,7 @@
             android:id="@+id/name_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/logo"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -71,11 +71,10 @@
             android:id="@+id/name_last_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/name_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
-
             android:layout_marginLeft="25dp"
             android:layout_centerHorizontal="true"
             >
@@ -100,7 +99,7 @@
             android:id="@+id/name_middle_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/name_last_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -128,7 +127,7 @@
             android:id="@+id/passport_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/name_middle_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -156,7 +155,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/passport_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -186,7 +185,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/email_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -215,7 +214,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/emergency_email_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -246,7 +245,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/phno_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -282,7 +281,7 @@
             android:layout_centerHorizontal="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7">
+            android:alpha="0.9">
             <custom_font.MyEditText
                 android:id="@+id/dob"
                 android:layout_width="match_parent"
@@ -341,7 +340,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/sex"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -369,7 +368,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/naionality_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -398,7 +397,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/gardian_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -428,7 +427,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/gardian_no_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -458,7 +457,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/allergies_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -487,7 +486,7 @@
             android:id="@+id/medication_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/meal_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -514,7 +513,7 @@
             android:id="@+id/blood_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/medication_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -542,7 +541,7 @@
             android:id="@+id/batch_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/blood_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -571,7 +570,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/batch_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -600,7 +599,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/roll_no_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
@@ -630,7 +629,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
+            android:alpha="0.9"
             android:layout_below="@+id/standard_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"

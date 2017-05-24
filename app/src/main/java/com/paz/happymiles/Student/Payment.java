@@ -30,7 +30,7 @@ public class Payment extends FragmentActivity {
         tabLayout.addTab(tabLayout.newTab().setText("CREDIT CARD"));
         tabLayout.addTab(tabLayout.newTab().setText("NET BANKING"));
     //    tabLayout.addTab(tabLayout.newTab().setText("WALLET"));
-        tabLayout.addTab(tabLayout.newTab().setText("CASH ON DELIVERY"));
+        // tabLayout.addTab(tabLayout.newTab().setText("CASH ON DELIVERY"));
 
         final ViewPager viewPager = (ViewPager)findViewById(R.id.pager);
 
@@ -76,9 +76,9 @@ public class Payment extends FragmentActivity {
                 case 1:
                     Net_Banking tab2 = new Net_Banking();
                     return tab2;
-                case 2:
-                    COD_Fragment tab3 = new COD_Fragment();
-                    return tab3;
+//                case 2:
+//                    COD_Fragment tab3 = new COD_Fragment();
+//                    return tab3;
 
 
                 default:

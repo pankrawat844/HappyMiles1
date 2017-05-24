@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 if(connectivity.isNetworkAvailable(MainActivity.this)) {
                     final SweetAlertDialog dialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.PROGRESS_TYPE);
                     dialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                    dialog.setTitleText("Loading");
+                    dialog.setTitleText("Loading...");
                     dialog.setCancelable(false);
                     dialog.show();
                      stringRequest= new StringRequest(Request.Method.POST, ConstantUrls.login, new Response.Listener<String>() {

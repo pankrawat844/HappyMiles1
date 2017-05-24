@@ -1,5 +1,6 @@
 package com.paz.happymiles;
 
+import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -67,12 +69,21 @@ public class Home_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home2);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //   toolbar.setLogo(R.drawable.logo);
+        setSupportActionBar(toolbar);
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setIcon(R.drawable.logo);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         sharedPreferences = getSharedPreferences("pref", 0);
         list = new ArrayList<>();
         adapter = new Main_Adapter(list, this);
-        call_recyle();
 
+        call_recyle();
+        if (!sharedPreferences.getBoolean("tour_code_enter", false)) {
+            call_dialog();
+        }
         logout = (ImageView) findViewById(R.id.logout);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -93,7 +104,8 @@ public class Home_Activity extends AppCompatActivity {
                         Intent in = new Intent(Home_Activity.this, Tour_Cordinator.class);
                         startActivity(in);
                     } else if (position == 3) {
-
+                        Intent in = new Intent(Home_Activity.this, Hotel_Detail.class);
+                        startActivity(in);
                     } else if (position == 4) {
                         Intent in = new Intent(Home_Activity.this, Transport_Detail.class);
                         startActivity(in);
