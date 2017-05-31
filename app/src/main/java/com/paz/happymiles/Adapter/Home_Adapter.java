@@ -41,7 +41,7 @@ public class Home_Adapter extends RecyclerView.Adapter<Home_Adapter.view_holder>
     private int defaultBackgroundcolor;
 
     GestureDetector mGestureDetector;
-    private static final int SCALE_DELAY = 30;
+    private static final int SCALE_DELAY = 10;
 
     public interface OnItemClickListener {
         public void onItemClick(View view, int position);
@@ -150,7 +150,7 @@ public class Home_Adapter extends RecyclerView.Adapter<Home_Adapter.view_holder>
             booksViewHolder.bookContainer.setScaleX(0);
             booksViewHolder.bookContainer.animate()
                     .scaleY(1).scaleX(1)
-                    .setDuration(200)
+                    .setDuration(50)
                     .setStartDelay(SCALE_DELAY * cellPosition)
                     .start();
         }

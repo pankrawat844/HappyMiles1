@@ -28,6 +28,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -59,97 +60,166 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class Home_Activity extends AppCompatActivity {
     RelativeLayout personal_relative,daily_relative,payment,tour_codinator,hotel_info,transpor_detail;
-    ImageView daily_internity_img;
+    ImageView daily, personal, coordinator, hotel, flight, logout;
     SharedPreferences sharedPreferences;
     RecyclerView recyclerView;
     Main_Adapter adapter;
     List<Main_Pojo> list;
-    ImageView logout;
+    TextView logout_txt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home2);
+        setContentView(R.layout.home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //   toolbar.setLogo(R.drawable.logo);
-        setSupportActionBar(toolbar);
+//       setSupportActionBar(toolbar);
+////
+//        getSupportActionBar().setTitle("");
+//        getSupportActionBar().setIcon(R.mipmap.logo);
+//        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-        getSupportActionBar().setTitle("");
-        getSupportActionBar().setIcon(R.drawable.logo);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
         sharedPreferences = getSharedPreferences("pref", 0);
-        list = new ArrayList<>();
-        adapter = new Main_Adapter(list, this);
-
-        call_recyle();
-        if (!sharedPreferences.getBoolean("tour_code_enter", false)) {
-            call_dialog();
-        }
+        personal_relative = (RelativeLayout) findViewById(R.id.personal_relative);
+        daily_relative = (RelativeLayout) findViewById(R.id.daily_relative);
+        payment = (RelativeLayout) findViewById(R.id.payment_img);
+        tour_codinator = (RelativeLayout) findViewById(R.id.tour_cordinator_img);
+        hotel_info = (RelativeLayout) findViewById(R.id.hotel_rel);
+        transpor_detail = (RelativeLayout) findViewById(R.id.transport);
         logout = (ImageView) findViewById(R.id.logout);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        logout_txt = (TextView) findViewById(R.id.logout_txt);
 
-
-        adapter.setOnItemClickListner(new Main_Adapter.OnItemClickListner() {
-                @Override
-                public void onItemclick(View view, int position) {
-                    if (position == 0) {
-                        Intent in = new Intent(Home_Activity.this, Profile.class);
-                        startActivity(in);
-                    } else if (position == 1) {
-                        Intent in = new Intent(Home_Activity.this, About_Tour.class);
-                        startActivity(in);
-                    } else if (position == 2) {
-                        Intent in = new Intent(Home_Activity.this, Tour_Cordinator.class);
-                        startActivity(in);
-                    } else if (position == 3) {
-                        Intent in = new Intent(Home_Activity.this, Hotel_Detail.class);
-                        startActivity(in);
-                    } else if (position == 4) {
-                        Intent in = new Intent(Home_Activity.this, Transport_Detail.class);
-                        startActivity(in);
-                    } else if (position == 5) {
-                        Intent intent = new Intent(Home_Activity.this, Payment.class);
-                        startActivity(intent);
-                    }
-                }
-            });
-        recyclerView.setOnTouchListener(new View.OnTouchListener() {
+        personal_relative.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return false;
+            public void onClick(View v) {
+                Intent in = new Intent(Home_Activity.this, Profile.class);
+                startActivity(in);
             }
         });
 
+        daily_relative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Home_Activity.this, About_Tour.class);
+                startActivity(in);
+            }
+        });
+
+        tour_codinator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Home_Activity.this, Tour_Cordinator.class);
+                startActivity(in);
+            }
+        });
+
+        hotel_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Home_Activity.this, Hotel_Detail.class);
+                startActivity(in);
+            }
+        });
+
+        transpor_detail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Home_Activity.this, Transport_Detail.class);
+                startActivity(in);
+            }
+        });
+
+        payment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Home_Activity.this, Payment.class);
+                startActivity(in);
+            }
+        });
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.clear();
                 editor.commit();
-                Intent in = new Intent(Home_Activity.this, MainActivity.class);
-                startActivity(in);
                 finish();
+                Intent intent = new Intent(Home_Activity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
+
+//        list = new ArrayList<>();
+//        adapter = new Main_Adapter(list, this);
+
+        //call_recyle();
+        if (!sharedPreferences.getBoolean("tour_code_enter", false)) {
+            call_dialog();
+        }
+//        logout = (ImageView) findViewById(R.id.logout);
+//        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+//        recyclerView.setLayoutManager(layoutManager);
+//        recyclerView.setAdapter(adapter);
+
+
+//        adapter.setOnItemClickListner(new Main_Adapter.OnItemClickListner() {
+//                @Override
+//                public void onItemclick(View view, int position) {
+//                    if (position == 0) {
+//                        Intent in = new Intent(Home_Activity.this, Profile.class);
+//                        startActivity(in);
+//                    } else if (position == 1) {
+//                        Intent in = new Intent(Home_Activity.this, About_Tour.class);
+//                        startActivity(in);
+//                    } else if (position == 2) {
+//                        Intent in = new Intent(Home_Activity.this, Tour_Cordinator.class);
+//                        startActivity(in);
+//                    } else if (position == 3) {
+//                        Intent in = new Intent(Home_Activity.this, Hotel_Detail.class);
+//                        startActivity(in);
+//                    } else if (position == 4) {
+//                        Intent in = new Intent(Home_Activity.this, Transport_Detail.class);
+//                        startActivity(in);
+//                    } else if (position == 5) {
+//                        Intent intent = new Intent(Home_Activity.this, Payment.class);
+//                        startActivity(intent);
+//                    }
+//                }
+//            });
+//        recyclerView.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                return false;
+//            }
+//        });
+//
+//        logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                SharedPreferences.Editor editor = sharedPreferences.edit();
+//                editor.clear();
+//                editor.commit();
+//                Intent in = new Intent(Home_Activity.this, MainActivity.class);
+//                startActivity(in);
+//                finish();
+//            }
+//        });
     }
 
-    private void call_recyle() {
-        Main_Pojo pojo = new Main_Pojo(R.drawable.personal, "PROFILE", "#cfe1e1");
-        list.add(pojo);
-        Main_Pojo pojo1 = new Main_Pojo(R.drawable.itenity, "ITERNITY", "#99bddf");
-        list.add(pojo1);
-        Main_Pojo pojo2 = new Main_Pojo(R.drawable.tour_cor, "CO-ORDINATOR", "#c3ecb3");
-        list.add(pojo2);
-        Main_Pojo pojo3 = new Main_Pojo(R.drawable.hotel_info, "HOTEL", "#d8baf2");
-        list.add(pojo3);
-        Main_Pojo pojo4 = new Main_Pojo(R.drawable.trans, "TRANSPORT", "#d6cfa5");
-        list.add(pojo4);
-        Main_Pojo pojo5 = new Main_Pojo(R.drawable.pay, "PAYMENT", "#99bddf");
-        list.add(pojo5);
-        adapter.notifyDataSetChanged();
-    }
+//    private void call_recyle() {
+//        Main_Pojo pojo = new Main_Pojo(R.drawable.personal, "PROFILE", "#cfe1e1");
+//        list.add(pojo);
+//        Main_Pojo pojo1 = new Main_Pojo(R.drawable.itenity, "ITERNITY", "#99bddf");
+//        list.add(pojo1);
+//        Main_Pojo pojo2 = new Main_Pojo(R.drawable.tour_cor, "CO-ORDINATOR", "#c3ecb3");
+//        list.add(pojo2);
+//        Main_Pojo pojo3 = new Main_Pojo(R.drawable.hotel_info, "HOTEL", "#d8baf2");
+//        list.add(pojo3);
+//        Main_Pojo pojo4 = new Main_Pojo(R.drawable.trans, "TRANSPORT", "#d6cfa5");
+//        list.add(pojo4);
+//        Main_Pojo pojo5 = new Main_Pojo(R.drawable.pay, "PAYMENT", "#99bddf");
+//        list.add(pojo5);
+//        adapter.notifyDataSetChanged();
+//    }
 
     private void call_dialog() {
        final Dialog dialog = new Dialog(Home_Activity.this, R.style.CustomDialog2);

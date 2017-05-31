@@ -10,8 +10,10 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.Pair;
 import android.util.SparseArray;
@@ -58,7 +60,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
  * Created by Admin on 3/2/2017.
  */
 
-public class Hotel_Detail extends Activity {
+public class Hotel_Detail extends AppCompatActivity {
 
     RecyclerView recyclerView;
     Hotel_Detail_Adapter home_adapter;
@@ -70,6 +72,13 @@ public class Hotel_Detail extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hotel_dialog);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //   toolbar.setLogo(R.drawable.logo);
+//        setSupportActionBar(toolbar);
+////
+//        getSupportActionBar().setTitle("");
+//        getSupportActionBar().setIcon(R.mipmap.logo);
+//        getSupportActionBar().setDisplayUseLogoEnabled(true);
         sharedPreferences=getSharedPreferences("pref",0);
         recyclerView= (RecyclerView) findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
@@ -112,15 +121,15 @@ public class Hotel_Detail extends Activity {
             startActivity(detailIntent, options.toBundle());
         }
     };
-//    private void init(View view){
-//
-//         recyclerView= (RecyclerView)view.findViewById(R.id.recycleview);
-//        RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
-//        recyclerView.setLayoutManager(layoutManager);
-//        home_adapter = new Home_Adapter(list,this);
-//        recyclerView.setAdapter(home_adapter);
-//        static_data();
-//    }
+    //    private void init(View view){
+    //
+    //         recyclerView= (RecyclerView)view.findViewById(R.id.recycleview);
+    //        RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+    //        recyclerView.setLayoutManager(layoutManager);
+    //        home_adapter = new Home_Adapter(list,this);
+    //        recyclerView.setAdapter(home_adapter);
+    //        static_data();
+    //    }
 
 
     private void iternity_data() {

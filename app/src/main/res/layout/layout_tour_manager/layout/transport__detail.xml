@@ -8,7 +8,7 @@
     android:background="@drawable/tour"
     tools:context="com.paz.happymiles.Transport_Detail">
 
-
+    <include layout="@layout/toolbar"></include>
     <com.rey.material.widget.Spinner
         android:id="@+id/spinner"
         android:layout_marginTop="20dp"
@@ -27,8 +27,8 @@
         android:id="@+id/flight_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#ffffff"
+        android:layout_marginTop="40dp"
+        android:background="@color/appthemecolor"
         android:visibility="gone"
         >
 
@@ -37,6 +37,7 @@
             android:id="@+id/flight_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:background="@drawable/flight_icon" />
 
         <custom_font.MyTextView
@@ -47,6 +48,7 @@
             android:layout_toRightOf="@+id/flight_img"
             android:text="Emarites Airline"
             android:textSize="20dp"
+            android:layout_marginTop="20dp"
             android:textStyle="bold" />
 
         <custom_font.MyTextView
@@ -125,9 +127,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/from"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:background="@color/appthemecolor"
-            android:padding="10dp">
+            android:padding="15dp">
 
             <custom_font.MyTextView
                 android:id="@+id/depart_txt"
@@ -179,7 +181,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/depart_rel"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:text="Terminal/Gate" />
 
@@ -189,7 +191,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/terminal_txt"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:text="3/A21" />
 
 
@@ -200,7 +202,7 @@
             android:layout_alignParentRight="true"
             android:layout_below="@+id/depart_rel"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:text="Terminal/Gate"
              />
@@ -211,7 +213,7 @@
             android:layout_alignParentRight="true"
             android:layout_below="@+id/terminal_arr_txt"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:text="TBIT"
             />
     </RelativeLayout>
@@ -220,22 +222,23 @@
         android:id="@+id/train_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:background="#ffffff"
-        android:layout_marginTop="10dp">
+        android:background="@color/appthemecolor"
+        android:layout_marginTop="40dp">
 
 
         <ImageView
             android:id="@+id/train_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/train" />
+            android:background="@drawable/train"
+            android:layout_marginTop="20dp" />
 
         <custom_font.MyTextView
             android:id="@+id/train_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
             android:layout_toRightOf="@+id/train_img"
             android:text="Shatabi Express"
             android:textSize="20dp"
@@ -317,9 +320,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/train_from"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:background="@color/appthemecolor"
-            android:padding="10dp">
+            android:padding="15dp">
 
             <custom_font.MyTextView
                 android:id="@+id/train_depart_txt"
@@ -371,7 +374,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/train_depart_rel"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:text="PlatForm No" />
 
@@ -392,7 +395,7 @@
             android:layout_alignParentRight="true"
             android:layout_below="@+id/train_depart_rel"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:text="PlatForm No"
             />
@@ -411,17 +414,19 @@
 
     <RelativeLayout
         android:id="@+id/bus_layout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="40dp"
+        android:background="@color/appthemecolor"
+
+        >
 
 
         <ImageView
             android:id="@+id/bus_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/bus" />
 
         <custom_font.MyTextView
@@ -429,7 +434,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
 
             android:layout_toRightOf="@+id/bus_img"
             android:text="Shatabi Express"
@@ -512,9 +517,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bus_from"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:background="@color/appthemecolor"
-            android:padding="10dp">
+            android:padding="15dp">
 
             <custom_font.MyTextView
                 android:id="@+id/bus_depart_txt"
@@ -566,9 +571,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/bus_depart_rel"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:textStyle="bold"
-            android:text="Staion No" />
+            android:layout_marginTop="10dp"
+            android:text="Staion No"
+            android:textStyle="bold" />
 
         <custom_font.MyTextView
             android:id="@+id/bus_terminal"
@@ -587,10 +592,10 @@
             android:layout_alignParentRight="true"
             android:layout_below="@+id/bus_depart_rel"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
-            android:textStyle="bold"
+            android:layout_marginTop="10dp"
             android:text="Station No"
-            />
+            android:textStyle="bold" />
+
         <custom_font.MyTextView
             android:id="@+id/bus_terminal_arr"
             android:layout_width="wrap_content"
@@ -599,7 +604,6 @@
             android:layout_below="@+id/bus_arival_terminal_arr_txt"
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
-            android:text="TBIT"
-            />
+            android:text="TBIT" />
     </RelativeLayout>
 </LinearLayout>

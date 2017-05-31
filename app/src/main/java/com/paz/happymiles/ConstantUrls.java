@@ -14,6 +14,6 @@ public class ConstantUrls {
      public static String student_contact="http://paztechnologies.com/happy_miles/app/get_all_students.php";
      public static String update_profile="http://paztechnologies.com/happy_miles/app/student_details_update.php";
      public static String hotel_detail = "http://paztechnologies.com/happy_miles/app/get_hotels_details.php";
-
+    public static String tour_coordinator = "http://paztechnologies.com/happy_miles/app/get_tourcordinator_details.php";
 
 }

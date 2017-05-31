@@ -10,5 +10,10 @@
 
     local:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:background="@mipmap/logo" />
 
 </android.support.v7.widget.Toolbar>

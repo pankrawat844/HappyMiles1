@@ -6,6 +6,7 @@
     android:orientation="vertical"
    >
 
+    <include layout="@layout/toolbar"></include>
 
     <custom_font.CustomTabLayout
         android:id="@+id/tab_layout"

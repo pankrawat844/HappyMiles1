@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_bg">
+    android:background="@drawable/tour">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <include layout="@layout/toolbar"></include>
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/logo"
             android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             app:civ_border_width="1dp"
             app:civ_border_color="#FF000000"
             android:layout_toLeftOf="@+id/view"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="80dp" />
         <View
             android:layout_width="4dp"
             android:layout_height="wrap_content"
@@ -35,7 +36,7 @@
             android:layout_alignParentRight="true"
             android:src="@drawable/passport"
             android:layout_toRightOf="@+id/view"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="80dp" />
 
 
         <RelativeLayout
@@ -59,8 +60,9 @@
                 android:layout_gravity="center"
                 android:inputType="text"
                 android:paddingLeft="15dp"
+
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
 
@@ -88,7 +90,7 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
 
@@ -117,7 +119,7 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
 
@@ -145,7 +147,7 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
 
@@ -174,7 +176,7 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
 
@@ -204,7 +206,7 @@
                 android:inputType="textPassword"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
 
@@ -234,7 +236,7 @@
                 android:paddingLeft="15dp"
 
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
 
@@ -265,7 +267,7 @@
                 android:paddingLeft="15dp"
 
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
 
@@ -289,7 +291,7 @@
                 android:hint="Date Of Birth"
                 android:textColorHint="#ffffff"
                 android:textSize="@dimen/edit_text"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:paddingLeft="15dp"
                 android:layout_gravity="center"
                 android:inputType="text"
@@ -309,12 +311,12 @@
             <custom_font.MyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:textSize="@dimen/edit_text"
                 android:id="@+id/gender"
                 android:text="Gender"/>
             <RadioGroup
-                style="@style/Material.Widget.Spinner"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
@@ -327,7 +329,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Male"
-                    android:checked="true"
+
                     />
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -359,7 +361,7 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
         </RelativeLayout>
@@ -372,7 +374,6 @@
             android:layout_below="@+id/naionality_layout"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp"
-
             android:layout_marginLeft="25dp"
             android:layout_centerHorizontal="true"
 
@@ -387,7 +388,7 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
         </RelativeLayout>
@@ -416,7 +417,7 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
         </RelativeLayout>
@@ -446,7 +447,7 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
         </RelativeLayout>
@@ -476,7 +477,7 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
         </RelativeLayout>
@@ -505,7 +506,7 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
         </RelativeLayout>
@@ -532,7 +533,7 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
         </RelativeLayout>
@@ -560,7 +561,7 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
         </RelativeLayout>
@@ -589,7 +590,7 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
         </RelativeLayout>
@@ -618,7 +619,7 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
         </RelativeLayout>
@@ -648,7 +649,7 @@
                 android:inputType="textFilter"
                 android:paddingLeft="15dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_edittext_profile"
                 android:textSize="@dimen/edit_text"
                 android:letterSpacing="0.1"/>
         </RelativeLayout>

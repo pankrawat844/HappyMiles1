@@ -15,6 +15,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.InputFilter;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -61,7 +63,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by Admin on 2/27/2017.
  */
 
-public class Profile extends Activity {
+public class Profile extends AppCompatActivity {
 
     Context context;
     de.hdodenhof.circleimageview.CircleImageView profile_pic;
@@ -87,7 +89,6 @@ public class Profile extends Activity {
         sharedPreferences= getSharedPreferences("pref",Context.MODE_PRIVATE);
         dateFormat= new SimpleDateFormat("dd-MM-yyyy", Locale.UK);
             init();
-
 
         Picasso.with(this).load(sharedPreferences.getString("profile_img","")).error(R.drawable.user).into(profile_pic);
 
@@ -138,6 +139,7 @@ public class Profile extends Activity {
 
 
     private void init(){
+
         profile_pic=(CircleImageView)findViewById(R.id.logo);
         passport_first_name=(EditText)findViewById(R.id.name);
         passpost_last_name=(EditText)findViewById(R.id.last_name);

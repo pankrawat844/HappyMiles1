@@ -36,7 +36,7 @@ public class Hotel_Detail_Adapter extends RecyclerView.Adapter<Hotel_Detail_Adap
 
     private com.paz.happymiles.Recylevie_animation.OnItemClickListener mListener;
     GestureDetector mGestureDetector;
-    private static final int SCALE_DELAY = 30;
+    private static final int SCALE_DELAY = 10;
     public Hotel_Detail_Adapter(List<Hotel_Detail_Pojo> list, Context ctx){
          this.list=list;
         this.ctx=ctx;
@@ -59,7 +59,7 @@ public class Hotel_Detail_Adapter extends RecyclerView.Adapter<Hotel_Detail_Adap
         final  Hotel_Detail_Pojo pojo= list.get(position);
         Picasso.with(ctx).load(pojo.getHotel_img()).error(R.drawable.bg).into(holder.imgview);
         holder.imgview.setDrawingCacheEnabled(true);
-        holder.days.setText(pojo.getDay());
+        holder.days.setText("Day " + pojo.getDay());
         Bitmap bookCoverBitmap = BitmapFactory.decodeResource(ctx.getResources(),R.drawable.arrow);
         setCellColors(bookCoverBitmap, holder, position);
         amimateCell(holder);
@@ -126,7 +126,7 @@ public class Hotel_Detail_Adapter extends RecyclerView.Adapter<Hotel_Detail_Adap
             booksViewHolder.bookContainer.setScaleX(0);
             booksViewHolder.bookContainer.animate()
                     .scaleY(1).scaleX(1)
-                    .setDuration(200)
+                    .setDuration(50)
                     .setStartDelay(SCALE_DELAY * cellPosition)
                     .start();
         }

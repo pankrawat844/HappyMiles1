@@ -9,6 +9,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.transition.Transition;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.view.animation.AnimationUtils;
@@ -20,8 +22,10 @@ import android.widget.TextView;
 import com.android.volley.toolbox.StringRequest;
 import com.paz.happymiles.Recylevie_animation.CustomAnimatorListener;
 import com.paz.happymiles.Recylevie_animation.CustomTransitionListener;
+import com.paz.happymiles.Recylevie_animation.ObservableScrollView;
 import com.paz.happymiles.Recylevie_animation.Utils;
 import com.paz.happymiles.Student.About_Tour;
+import com.paz.happymiles.Student.Days_Details;
 import com.paz.happymiles.Student.Hotel_Detail;
 import com.paz.happymiles.Student_Pojo.About_tour_pojo;
 import com.paz.happymiles.Student_Pojo.Hotel_Detail_Pojo;
@@ -38,7 +42,8 @@ public class Hotel_Day_Detail extends Activity{
 
     @InjectView(R.id.card_view)
     FrameLayout contentCard;
-
+    @InjectView(R.id.scroll)
+    ObservableScrollView scrollView;
     @InjectView(R.id.activity_detail_main_container)
     View mainContaienr;
     @InjectView(R.id.activity_detail_titles_container)  View titlesContainer;
@@ -81,7 +86,31 @@ public class Hotel_Day_Detail extends Activity{
         toolbar.setTransitionName("cover" + position);
         getWindow().getSharedElementEnterTransition().addListener(sharedTransitionListener);
         Palette.generateAsync(bookCoverBitmap, paletteListener);
+        scrollView.setOnTouchListener(new View.OnTouchListener() {
 
+            private GestureDetector gestureDetector = new GestureDetector(Hotel_Day_Detail.this, new GestureDetector.SimpleOnGestureListener() {
+
+                @Override
+                public boolean onSingleTapUp(MotionEvent e) {
+                    // Toast.makeText(getApplicationContext(),"single tap",3).show();
+                    onBackPressed();
+                    return super.onSingleTapUp(e);
+                }
+
+                @Override
+                public boolean onDoubleTap(MotionEvent e) {
+                    // Toast.makeText(getApplicationContext(),"double tap",3).show();
+
+                    return super.onDoubleTap(e);
+                }
+            });
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                gestureDetector.onTouchEvent(event);
+                return false;
+            }
+        });
     }
 
 

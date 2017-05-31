@@ -114,14 +114,14 @@ public class Days_Details extends Activity {
                 @Override
                 public boolean onSingleTapUp(MotionEvent e) {
                     // Toast.makeText(getApplicationContext(),"single tap",3).show();
-
+                    onBackPressed();
                     return super.onSingleTapUp(e);
                 }
 
                 @Override
                 public boolean onDoubleTap(MotionEvent e) {
                     // Toast.makeText(getApplicationContext(),"double tap",3).show();
-                    onBackPressed();
+
                     return super.onDoubleTap(e);
                 }
             });

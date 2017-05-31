@@ -24,7 +24,7 @@
         android:id="@+id/name_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:alpha="0.7"
+        android:alpha="0.9"
         android:layout_below="@+id/logo"
         android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
@@ -54,7 +54,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:alpha="0.7"
+        android:alpha="0.9"
         android:layout_below="@+id/name_layout"
         android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
@@ -84,7 +84,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:alpha="0.7"
+        android:alpha="0.9"
         android:layout_below="@+id/email_layout"
         android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
@@ -113,7 +113,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:alpha="0.7"
+        android:alpha="0.9"
         android:layout_below="@+id/password_layout"
         android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
@@ -150,38 +150,37 @@
     <com.rey.material.widget.Spinner
         android:id="@+id/date"
         style="@style/Material.Widget.Spinner"
-        android:layout_width="100dp"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dob"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
-        android:padding="10dp"
         app:rd_style="@style/Material.Drawable.Ripple.Wave"/>
 
     <com.rey.material.widget.Spinner
         android:id="@+id/month"
         style="@style/Material.Widget.Spinner"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dob"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/date"
-        android:padding="10dp"
+
         app:rd_style="@style/Material.Drawable.Ripple.Wave"/>
 
 
     <com.rey.material.widget.Spinner
         android:id="@+id/year"
         style="@style/Material.Widget.Spinner"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dob"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/month"
 
-        android:padding="10dp"
+
         android:layout_alignBottom="@+id/month"
         app:rd_style="@style/Material.Drawable.Ripple.Wave"/>
     <RelativeLayout
@@ -226,7 +225,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:alpha="0.7"
+        android:alpha="0.9"
         android:layout_below="@+id/sex"
         android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
@@ -254,7 +253,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:alpha="0.7"
+        android:alpha="0.9"
         android:layout_below="@+id/naionality_layout"
         android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
@@ -283,7 +282,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:alpha="0.7"
+        android:alpha="0.9"
         android:layout_below="@+id/gardian_layout"
         android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
@@ -313,7 +312,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:alpha="0.7"
+        android:alpha="0.9"
         android:layout_below="@+id/gardian_no_layout"
         android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
@@ -341,7 +340,7 @@
         android:id="@+id/medication_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:alpha="0.7"
+        android:alpha="0.9"
         android:layout_below="@+id/allergies_layout"
         android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
@@ -371,7 +370,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:alpha="0.7"
+        android:alpha="0.9"
         android:layout_below="@+id/medication_layout"
         android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
